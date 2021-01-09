@@ -1,0 +1,4 @@
+    src: This folder will contain the .h and .cpp files that contain the functionality of the project. More structure could be introduced here but I don’t want to overdo it here. Many projects will only consist of 10 files or less and then one folder should suffice. If you choose to further subdivide this, the following steps will be exactly the same.
+    main: In this folder, I put the entry-point of the project for stand-alone execution. Based on this file the main binary will be built.
+    tests: This folder will contain c++ files with unit-tests. Adding gtest will happen later but I created this folder right away.
+    third_party: This folder will contain external dependencies. In my case, this will only be googletest. If Boost was smaller, it could also be put here but since it is extremely large and should not be built as part of my project, I decided to install it on the operating system level.
