@@ -16,19 +16,17 @@ add_executable(Main main/main.cpp)
 target_link_libraries(Main)
 
 #googletests
-set (gtest_force_shared_crt ON CACHE BOOL "MSVC defaults to shared CRT" FORCE)
-add_subdirectory(third_party/googletest)
-target_compile_definitions(gtest
-  PUBLIC
-    GTEST_LANG_CXX20
-    GTEST_HAS_TR1_TUPLE=0
-)
+#enable_testing()
+#set (gtest_force_shared_crt ON CACHE BOOL "MSVC defaults to shared CRT" FORCE)
+#add_subdirectory(third_party/googletest)
+#include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
-target_sources(tests
-  PRIVATE
-    unit_tests/SomeTests.cpp
-)
-add_executable(tests)
-set_target_properties(tests PROPERTIES COMPILE_FLAGS "${cxx_strict}")
+#target_compile_definitions(gtest
+#  PUBLIC
+#    GTEST_LANG_CXX20
+#    GTEST_HAS_TR1_TUPLE=0
+#)
+#target_sources(tests unit_tests/SomeTests.cp)
+#add_executable(tests unit_tests/SomeTests.cp)
+#set_target_properties(tests PROPERTIES COMPILE_FLAGS "${cxx_strict}")
 #target_link_libraries(tests gtest gtest_main Core)
-target_link_libraries(tests gtest gtest_main)

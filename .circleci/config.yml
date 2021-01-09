@@ -23,24 +23,24 @@ jobs:
             cmake ..
             make
 
-  test:
-    executor: exectr
-    steps:
-      - attach_workspace:
-          at: .
-      - run:
-          name: Execute Tests
-          command: |
-            cd build
-            ./tests --gtest_output=XML
-      - store_test_results:
-          path: build
+#  test:
+#    executor: exectr
+#    steps:
+#      - attach_workspace:
+#          at: .
+#      - run:
+#          name: Execute Tests
+#          command: |
+#            cd build
+#            ./tests --gtest_output=XML
+#      - store_test_results:
+#          path: build
 
 workflows:
   version: 2
   build-and-test:
     jobs:
       - build
-      - test:
-          requires:
-            - build
+#      - test:
+#          requires:
+#            - build
