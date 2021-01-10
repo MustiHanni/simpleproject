@@ -21,6 +21,9 @@ jobs:
             mkdir -p build && cd build
             cmake .. -DTESTS_REQUIRED=ON
             make
+      - persist_to_workspace:
+          root: .
+          paths: build
 
   test:
     executor: exectr
